@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Merge-N-Convert</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <link rel="stylesheet" href="./../css/generic-style.css">
+
+</head>
+
+<body>
+    <nav class="purple darken-4">
+        <div class="nav-wrapper">
+            <a href="../index.html" class="brand-logo left"><i class="material-icons">arrow_back</i></a>
+        </div>
+    </nav>
+    <div class="row">
+        <div class="col s12 m8 offset-m2">
+            <div class="file-field input-field">
+                <div class="btn purple darken-4">
+                    <span>Files</span>
+                    <input type="file" required id="mergeFiles" multiple>
+                </div>
+                <div class="file-path-wrapper">
+                    <input class="file-path validate" type="text">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col s12 m3 offset-m2">
+            <p>
+                <label>
+                    <input class="with-gap purple darken-4" name="mergeTo" type="radio" value="topdf" checked/>
+                    <span>Merging PDF</span>
+                </label>
+            </p>
+        </div>
+        <div class="col s12 m3 offset-m2">
+            <p>
+                <label>
+                    <input class="with-gap purple darken-4" name="mergeTo" value="todoc" type="radio" />
+                    <span>Merging DOCX</span>
+                </label>
+            </p>
+        </div>
+    </div>
+    <div class="row center-align" id="mergeNote">
+        <p>Please select multiple files using ctrl key.</p>
+    </div> 
+    <div class="row center-align" id="mergeError">
+        <p></p>
+    </div> 
+    <div class="row center-align">
+        <button class="btn waves-effect waves-light purple darken-4" id="mergeBtn">Merge
+            <i class="material-icons right">send</i>
+        </button>
+    </div>
+    <script type="text/javascript">
+        require('./../renderer-process/merge-render')
+    </script>
+</body>
+
+</html>
